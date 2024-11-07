@@ -1,0 +1,13 @@
+{
+  "name": "com.stimpae.scriptable-state-machine",
+  "version": "1.1.0",
+  "displayName": "Unity Scriptable State Machine",
+  "description": "",
+  "unity": "2022.1",
+  "author": {
+    "name": "Stimpae",
+    "email": "",
+    "url": "samstamp.co.uk"
+  }
+}
+

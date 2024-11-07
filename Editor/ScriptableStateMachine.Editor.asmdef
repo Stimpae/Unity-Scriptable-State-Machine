@@ -1,0 +1,18 @@
+{
+    "name": "ScriptableStateMachine.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:79c108df3be8408b94c81fae452f304a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

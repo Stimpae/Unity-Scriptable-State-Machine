@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4c83b8571b808f4dbc065a4e9671651
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - visualTreeAsset: {fileID: 9197481963319205126, guid: d12573e738100a54691ee75c64efe69a, type: 3}
+  - stateActionTemplate: {fileID: 11500000, guid: d5df84f0ce334cb9965252c158010896, type: 3}
+  - stateConditionTemplate: {fileID: 11500000, guid: 91b713a32345487b9bae6eb4d42f2578, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
