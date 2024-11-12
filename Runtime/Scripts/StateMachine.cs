@@ -5,11 +5,18 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace ScriptableStateMachine {
+    
+    [Serializable]
+    public struct Transition {
+        public State fromState;
+        public StateTransition transition;
+    }
+    
     [CreateAssetMenu(menuName = "State Machine/State Machine", fileName = "DefaultStateMachine")]
     public class StateMachine : ScriptableObject {
         public State initializationState;
-        public Dictionary<State, StateTransition> transitions = new();
-        public List<StateTransition> anyTransitions = new();
+        [SerializeField] public List<Transition> transitions = new();
+        [SerializeField] public List<StateTransition> anyTransitions = new();
 
         public State CurrentState => m_currentNode.State;
 
@@ -27,8 +34,8 @@ namespace ScriptableStateMachine {
 
         private void SetupTransitions() {
             foreach (var transition in transitions) {
-                if(transition.Key == null || transition.Value.toState == null) continue;
-                AddTransition(transition.Key, transition.Value.toState, transition.Value.condition);
+                if(transition.fromState == null || transition.transition.toState == null) continue;
+                AddTransition(transition.fromState, transition.transition.toState, transition.transition.condition);
             }
 
             foreach (var transition in anyTransitions) {

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Unity%20Scriptable%20State%20Machine/Editor/Window/StateMachineCreatorWindow.uss?fileID=7433441132597879392&amp;guid=212b986ddd840bf4fa40e7a83800d051&amp;type=3#StateMachineCreatorWindow" />
+    <ui:TabView usage-hints="-1" class="tab-container">
+        <ui:Tab label="State Machine" name="StateMachineTab" text="State Machine" class="tab" />
+        <ui:Tab label="Conditions" name="ConditionTab" text="Condition" class="tab" />
+        <ui:Tab label="Actions" name="ActionTab" text="Action" enabled="true" class="tab" />
+        <ui:Tab label="Settings" name="SettingsTab" text="Settings" enabled="true" class="tab" />
+    </ui:TabView>
+</ui:UXML>

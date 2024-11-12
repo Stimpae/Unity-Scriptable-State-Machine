@@ -4,12 +4,12 @@ using UnityEngine.Serialization;
 
 namespace ScriptableStateMachine {
     [CreateAssetMenu(menuName = "State Machine/State")]
-    public class State : ScriptableObject {
-        [SerializeField, HideInInspector] public string stateUID;
-        [SerializeField, HideInInspector] private StateAction[] onEnterActions;
-        [SerializeField, HideInInspector]  private StateAction[] onExitActions;
-        [SerializeField, HideInInspector]  private StateAction[] updateActions;
-        [SerializeField, HideInInspector]  private StateAction[] fixedUpdateActions;
+    public sealed class State : ScriptableObject {
+        [SerializeField] public string stateUID;
+        [SerializeField] private StateAction[] onEnterActions;
+        [SerializeField]  private StateAction[] onExitActions;
+        [SerializeField]  private StateAction[] updateActions;
+        [SerializeField]  private StateAction[] fixedUpdateActions;
 
         private StatefulEntity m_statefulEntity;
 
@@ -18,7 +18,7 @@ namespace ScriptableStateMachine {
         private StateAction[] m_instancedUpdateActions;
         private StateAction[] m_instancedFixedUpdateActions;
 
-        public virtual void Initialize(StatefulEntity context) {
+        public void Initialize(StatefulEntity context) {
             m_statefulEntity = context;
             m_instancedOnEnterActions = InitializeActions(onEnterActions, context);
             m_instancedOnExitActions = InitializeActions(onExitActions, context);
@@ -36,13 +36,13 @@ namespace ScriptableStateMachine {
             return instances;
         }
 
-        public virtual void Update() => ExecuteActions(m_instancedUpdateActions);
+        public void Update() => ExecuteActions(m_instancedUpdateActions);
 
-        public virtual void FixedUpdate() => ExecuteActions(m_instancedFixedUpdateActions);
+        public void FixedUpdate() => ExecuteActions(m_instancedFixedUpdateActions);
 
-        public virtual void OnEnter() => ExecuteActions(m_instancedOnEnterActions);
+        public void OnEnter() => ExecuteActions(m_instancedOnEnterActions);
 
-        public virtual void OnExit() => ExecuteActions(m_instancedOnExitActions);
+        public void OnExit() => ExecuteActions(m_instancedOnExitActions);
 
         private void ExecuteActions(StateAction[] actions) {
             if (actions == null) return;
