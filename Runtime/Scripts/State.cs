@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -36,18 +37,18 @@ namespace ScriptableStateMachine {
             return instances;
         }
 
-        public void Update() => ExecuteActions(m_instancedUpdateActions);
+        public void Update() => _ = ExecuteActions(m_instancedUpdateActions);
 
-        public void FixedUpdate() => ExecuteActions(m_instancedFixedUpdateActions);
+        public void FixedUpdate() => _ = ExecuteActions(m_instancedFixedUpdateActions);
 
-        public void OnEnter() => ExecuteActions(m_instancedOnEnterActions);
+        public async void OnEnter() => await ExecuteActions(m_instancedOnEnterActions);
 
-        public void OnExit() => ExecuteActions(m_instancedOnExitActions);
+        public async void OnExit() => await ExecuteActions(m_instancedOnExitActions);
 
-        private void ExecuteActions(StateAction[] actions) {
+        private async Task ExecuteActions(StateAction[] actions) {
             if (actions == null) return;
             if (actions.Length == 0) return;
-            foreach (var action in actions) action.Execute();
+            foreach (var action in actions) await action.Execute();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace ScriptableStateMachine {
     public abstract class StateAction : ScriptableObject {
@@ -6,6 +7,6 @@ namespace ScriptableStateMachine {
         public virtual void Initialize(StatefulEntity context) {
             m_statefulEntity = context;
         }
-        public abstract void Execute();
+        public abstract Task Execute();
     }
 }

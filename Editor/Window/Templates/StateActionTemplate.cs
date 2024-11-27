@@ -1,4 +1,5 @@
-﻿using ScriptableStateMachine;
+﻿using System.Threading.Tasks;
+using ScriptableStateMachine;
 using UnityEngine;
 
 //[CreateAssetMenu(menuName = "State Machine/Actions/TEMPLATEACTIONCLASSNAME_Action")]
@@ -9,6 +10,7 @@ public class TEMPLATEACTIONCLASSNAME : StateAction {
         m_statefulEntity = context;
     }
 
-    public override void Execute() {
+    public override Task Execute() {
+        return Task.CompletedTask;
     }
 }
