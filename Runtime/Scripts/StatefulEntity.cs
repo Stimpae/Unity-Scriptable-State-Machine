@@ -4,7 +4,8 @@ namespace ScriptableStateMachine {
     public abstract class StatefulEntity : MonoBehaviour{
         [SerializeField] private StateMachine stateMachine;
 
-        protected StateMachine instancedStateMachine;
+        [HideInInspector]
+        public StateMachine instancedStateMachine;
         
         protected virtual void Awake() {
             instancedStateMachine = Instantiate(stateMachine);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ScriptableStateMachine {
     [CreateAssetMenu(menuName = "State Machine/Conditions/Timed State Condition")]
@@ -8,6 +9,10 @@ namespace ScriptableStateMachine {
         
         public override void ResetFlags() {
             m_currentTime = time;
+        }
+
+        private void OnEnable() {
+            ResetFlags();
         }
 
         public override bool Evaluate(StatefulEntity entity) {

@@ -95,7 +95,7 @@ namespace ScriptableStateMachine {
         }
 
         private StateTransition GetTransition() {
-            foreach (var transition in anyTransitions) {
+            foreach (var transition in m_anyTransitions) {
                 if (transition.condition.Evaluate(m_context)) return transition;
             }
 

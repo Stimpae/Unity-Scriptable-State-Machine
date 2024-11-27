@@ -46,8 +46,6 @@ namespace ScriptableStateMachine.Editor
         {
             m_root = new VisualElement();
             
-            
-            
             var multiColumListView = new MultiColumnListView {
                 bindingPath = "anyTransitions",
                 showBoundCollectionSize = false,
