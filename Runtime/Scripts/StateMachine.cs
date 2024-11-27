@@ -111,6 +111,7 @@ namespace ScriptableStateMachine {
             var node = m_nodes.GetValueOrDefault(state.stateUID);
             if (node != null) return node;
             node = new StateNode(state);
+            node.State.Initialize(m_context);
             m_nodes[state.stateUID] = node;
             return node;
         }
